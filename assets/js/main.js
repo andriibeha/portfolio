@@ -36,7 +36,36 @@ const shadowHeader = () => {
 
 window.addEventListener('scroll', shadowHeader)
 /*=============== EMAIL JS ===============*/
+const contactFrom = document.getElementById('contact-form')
+const contactMessage = document.getElementById('contact-message')
 
+const sendEmail = e => {
+	e.preventDefault()
+
+	emailjs
+		.sendForm(
+			'service_tvoxurj',
+			'template_4fow97b',
+			'#contact-form',
+			'-TXyjCAIU2YgNq8xf'
+		)
+		.then(
+			() => {
+				contactMessage.textContent = 'Message sent succesfuly'
+
+				setTimeout(() => {
+					contactMessage.textContent = ''
+				}, 5000)
+
+				contactFrom.reset()
+			},
+			() => {
+				contactMessage.textContent = 'Message not sent (services error)'
+			}
+		)
+}
+
+contactFrom.addEventListener('submit', sendEmail)
 /*=============== SHOW SCROLL UP ===============*/
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
