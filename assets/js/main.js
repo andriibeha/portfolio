@@ -67,7 +67,15 @@ const sendEmail = e => {
 
 contactFrom.addEventListener('submit', sendEmail)
 /*=============== SHOW SCROLL UP ===============*/
+const scrollUp = () => {
+	const scrollUpEl = document.getElementById('scroll-up')
 
+	this.scrollY >= 350
+		? scrollUpEl.classList.add('show-scroll')
+		: scrollUpEl.classList.remove('show-scroll')
+}
+
+window.addEventListener('scroll', scrollUp)
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
 /*=============== DARK LIGHT THEME ===============*/
