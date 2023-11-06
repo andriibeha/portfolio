@@ -314,6 +314,13 @@ img {
 	box-shadow: 0 1px 16px hsla(0, 0%, 0%, 0.12);
 }
 /* Active link */
+.active-link {
+	color: var(--white-color);
+}
+
+.active-link::after {
+	width: 25%;
+}
 
 /*=============== HOME ===============*/
 .home__container {
@@ -999,11 +1006,10 @@ img {
 .scrollup:hover {
 	transform: translateY(-0.5rem);
 }
-
+/* Show Scroll Up */
 .show-scroll {
 	bottom: 3rem;
 }
-/* Show Scroll Up */
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
